@@ -1,74 +1,446 @@
+/*
+=======================
+SHARED RULES
+=======================
+*/
+
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-body {
-   
-    background-color: #c6c2d1;
-    padding: 2%;
+html {
+    background-color: #ccc;
     font-family: 'Open Sans', sans-serif;
 }
 
-#top-nav {
-    background-color: #826FA3;
-    position: fixed;
-    min-height: 8%;
-    top: 0;
-    right: 0;
-    left: 0;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+h1, h2 {
+    font-family: 'Raleway', sans-serif;
 }
 
-#top-nav a {
-    text-align: center;
+
+
+#body-content {
+    margin: 0 10px 30px 10px;
+    padding: 10px;
+    justify-content: stretch;
+}
+
+#content-section {
+    max-width: 90%;
+    
+}
+
+.content-text {
+    padding: 5px;
+    margin: 0 2px 0 2px;
+}
+
+
+
+/*
+=======================
+OUTER GRID
+=======================
+*/
+
+.outer-grid {
+    display: grid;
+    height: 100vh;    
+    grid-template-rows: 70px 1fr;
+    grid-template-columns: 100px 1fr;
+    grid-template-areas: 
+    "alias-header alias-header"
+    "alias-bodycontent alias-bodycontent";
+}
+
+.outer-grid-expand {
+    grid-template-areas: 
+    "alias-header alias-header"
+    "alias-nav alias-bodycontent";
+}
+
+.hide-nav {
+    display: none;
+}
+
+
+header {
+    grid-area: alias-header;
+}
+
+nav {
+    grid-area: alias-nav;    
+}
+
+footer {
+    grid-area: alias-footer;
+}
+
+/*
+=======================
+TOP NAV
+=======================
+*/
+
+header {
+    background-color: #826FA3;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 70px;
+    padding: 0 20px;
+    }
+
+.fa-bars {    
     color: #ffffff;
 }
 
-#top-nav h3 {
+.fa-bars:hover {
+    color: #ddd7d7;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+header h2 {
     color:#c6c2d1;
+    text-align: center;
 }
 
-/*.icon {
-    margin-top: 200px;
-    height: 40px;
-}*/
+#top-nav-left #top-nav-right {
+    padding: 10px;
+}
 
-#banner-section {
-    min-height: 400px;
+
+.icon {
     
+    color: #ffffff;
+    text-decoration: none;
+    padding: 2px;
 }
+
+.icon:hover {
+    color: #ddd7d7;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.top-nav-center {
+    padding: 0 3px 0 3px;
+    grid-area: alias-center;
+}
+                                                  
+.top-nav-left {
+    grid-area: alias-lh;
+}
+
+.top-nav-right {
+    grid-area: alias-rh;
+    display: flex;
+    flex-direction: row;
+}
+
+/*
+=======================
+LEFT NAV
+=======================
+*/
+nav {
+    background-color: #826FA3;       
+    display: flex;
+    flex-direction: column;    
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    padding-left: 10px;
+}
+
+nav a:hover {
+    color: #ddd7d7;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+
+
+/*
+=======================
+BODY
+=======================
+*/
+
 
 #body-content {
-    padding: 70px;
-    display: grid;
-   
-    
+    overflow-y: scroll;
+    display: grid;    
+    row-gap: 5px;
+    padding: 15px;
+    grid-area: alias-bodycontent;
+     justify-self: center;
+     justify-items: center;
+    grid-template-rows: 1fr 5fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "alias-banner"
+    "alias-body-text";
+}
+
+#banner-section {   
+    grid-area: alias-banner;
+}
+
+/* #banner-section h2 {
+    text-align: center;
+}  */
+
+#banner-section img {
+    width: 90%;
+    height: auto;     
+    border-radius: 5px;        
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.27);
+    margin: 0 5% 10px 5%;    
+}
+
+
+#content-section {
+    grid-area: alias-body-text;
+    border-radius: 5px;
+    display: grid;    
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "alias-whatis"
+    "alias-ami"
+    "alias-famous";
 }
 
 .content-text {
     background-color: white;
     min-height: 80%;
-    min-width: 90%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    /* width: 90%; */
+    /* wrap */
 }
 
 #content-section {
-    display: flex;
-    justify-content: space-between;
-    background-color: #b1afb4;
+    display: grid;
     padding: 10px;
+    background-color: #b1afb4;
+    margin-bottom: 1.5%;    
 }
 
+
+
+#what-is {
+    grid-area: alias-whatis;
+    overflow-y: scroll;
+
+}
+
+#am-i {
+    grid-area: alias-ami;  
+}
+
+#famous {
+    overflow-y: scroll;
+    grid-area: alias-famous;       
+}
+
+.person {
+    display: flex;    
+}
+
+.person img {
+    border-radius: 50%;
+    border: 2px solid#826FA3;
+    margin-right: 1rem;
+    height: 40px;
+    width: auto;
+    grid-area: alias-personimg;
+    box-shadow: none;    
+    /* justify-self: center;     */
+
+}
+
+.person h4 {
+    grid-area: alias-personh;
+    /*justify-self: left; */
+    
+}
+
+/*
+=======================
+Login button
+=======================
+*/
+/* Button used to open the contact form - fixed at the bottom of the page */
+
+  
+  /* The popup form - hidden by default */
+  .form-popup {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+  }
+  
+  /* Add styles to the form container */
+  .form-container {
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
+  }
+  
+  /* Full-width input fields */
+  .form-container input[type=text], .form-container input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+  }
+  
+  /* When the inputs get focus, do something */
+  .form-container input[type=text]:focus, .form-container input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+  
+  /* Set a style for the submit/login button */
+  .form-container .btn {
+    background-color: #826FA3;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom:10px;
+    opacity: 0.8;
+  }
+  
+  /* Add a red background color to the cancel button */
+  .form-container .cancel {
+    background-color: #8343F0;
+  }
+  
+  /* Add some hover effects to buttons */
+  .form-container .btn:hover, .open-button:hover {
+    opacity: 1;
+  }
+
+ .form-reveal {
+    display: block;
+ }
+/*
+=======================
+FOOTER
+=======================
+*/
+
 footer {
+    display: flex;
     background-color: #8343F0;
     position: fixed;
+    color: #ffffff;
     bottom: 0;
     right: 0;
     width: 100%;
+    height: auto;
     border-top: solid #826FA3 2px;
+    justify-content: center;
+    align-items: center;
     
+}
+
+/*
+=======================
+BREAKPOINTS 
+=======================
+*/
+@media (min-width: 576px) {   
+    .outer-grid {
+        grid-template-areas:
+            "alias-header alias-header"
+            "alias-nav alias-bodycontent";
+    }
+
+    nav {
+      display: flex !important;
+      
+    }
+
+    #nav-button {
+        display: none;
+    }
+}
+
+@media (min-width: 992px) {
+    
+    #content-section {
+        display: flex;
+        justify-content: center;
+    }
+
+    #content-text {
+        border: 1px solid rgba(0, 0, 0, 2);      
+
+    }
+
+    #what-is, #am-i, #famous {        
+        width: 32%;
+    }
+     
+    
+    #what-is-header,  #am-i-header, #famous-header {
+        height: 10%;
+    }
+    
+    #what-is-text,  #am-i-text, #famous-text  {
+        
+        height: 85%;
+    }
+
+       
+    
+}
+/* unnecessary for now, just messing up header
+
+@media (min-width: 1440px) {
+    
+
+    header {
+        display: grid;
+        grid-template-columns: 1fr 950px 1fr;
+        grid-template-areas: "alias-lh alias-center alias rh";
+    }
+
+    #top-nav-left {
+        grid-area: alias-lh;
+        justify-self: end;
+    }
+
+    #top-nav-right{
+        grid-area: alias-rh;
+        justify-self: start;
+    }
+
+    
+/*
+    nav {
+        display: flex !important;
+        flex-direction: column;
+        align-items: flex-end;
+        padding-right: 15px;
+    }
+
+
 }

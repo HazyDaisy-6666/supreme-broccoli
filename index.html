@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
@@ -15,50 +16,106 @@
 </head>
 
 <body>
-    <div id="top-nav">
-        <a href="blank">Home</a>
-        <h3>Neurodivergents Unite</h3>
-        <div id="top-nav-right">
-            <a href="blank">About</a>
-            <a href="blank">Contact</a>
-            <a href="blank">Log in</a>
-        </div>
-    </div>
-    <div id="left_nav">
-        <!-- this will be the menu list of nd types 
-       <i class="fa-solid fa-bars"></i> -->
+    <div class="outer-grid">
+        <header id="top-nav">
+            <div id="top-nav-left">
+                <i id="nav-button" class="fa-solid fa-bars" onclick="toggleNav()"></i>
+                <a href="blank"><i class="fa-solid fa-house icon"></i></a>
+            </div>
+            <div id="top-nav-center">
+                <h2>Neurodivergents Unite</h2>
+            </div>
+            <div id="top-nav-right">
+                <a class="icon" href="blank">About | </a>
+                <a class="icon" href="blank">Contact |</a>
+                <p class="icon" href="blank" onclick="toggleForm()">Log in</p>
+            </div>
+        </header>
+        <nav class="hide-nav" id="left_nav">
+            <a href="blank"><i class="fa-sharp fa-solid fa-brain-circuit icon"></i>Austism</a>
+            <a href="blank"><i class="fa-sharp fa-solid fa-brain-circuit icon"></i>ADHD</a>
+            <a href="blank"><i class="fa-sharp fa-solid fa-brain-circuit icon"></i>Anxiety</a>
+        </nav>
+        <div id="body-content">
+            <!--  <button onclick="testFunction()">Click me</button>  testing JS linking-->
+            <div id="banner-section">
+                <!-- <h2>Welcome!</h2> -->
+                <img src="/images/differently_ordered.png" alt="differently ordered banner"></a>
+            </div>
+            <div id="content-section">
+                <div id="what-is">
+                    <h4 id="what-is-header">What is Neurodiversity?</h4>
+                    <div class="content-text" id="what-is-text">
+                        <p>Neurodiversity refers to the idea that neurological differences, such as those seen in autism
+                            or ADHD, reflect normal variations in brain development.</p>
+                    </div>
+                </div>
+                <div id="am-i">
+                    <!-- create a neurodivergent test in js (fun experiment) -->
+                    <h4 id="am-i-header">Could I be neurodivergent?</h4>
+                    <div class="content-text" id="am-i-text">
+                        <p>consectetur adipiscing elit,</p>
+                    </div>
+                </div>
+                <div id="famous">
+                    <!-- intend to replace this with a js function pulling from an object array -->
+                    <h4 id="famous-header">Famous neurodivergents</h4>
+                    <div class="content-text" id="famous-text">
+                        <div class="person">
 
-    </div>
-    <div id="body-content">
-        <button onclick="testFunction()">Click me</button> <!-- testing JS linking-->
-        <div id="banner-section">
-            <h2>Header for things</h2>
-            <img src="https://picsum.photos/seed/picsum/900/300?blur" alt="placeholder image"></a>
+                            <img src="https://duckduckgo.com/i/a293e5fe.jpg" alt="Anthony Hopkins">
+                            <div class="person-text">
+                                <h4>Anthony Hopkins</h4>
+                                <div>ASD</div>
+                            </div>
+                        </div>
+
+                        <div class="person">
+                            <img src="https://duckduckgo.com/i/3d36a5e1.jpg" alt="Emma Watson">
+                            <div class="person-text">
+                                <h4>Emma Watson</h4>
+                                <div>ADHD</div>
+                            </div>
+                        </div>
+                        <div class="person">
+                            <img src="https://duckduckgo.com/i/954a87d7.jpg" alt="Ryan Gosling">
+                            <div class="person-text">
+                                <h4>Ryan Gosling</h4>
+                                <div>ADHD</div>
+                            </div>
+                        </div>
+                        <div class="person">
+                            <img src="https://duckduckgo.com/i/f5c57375.jpg" alt="Billie Eilish">
+                            <div class="person-text">
+                                <h4>Billie Eilish</h4>
+                                <div>Tourette’s syndrome</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
         </div>
-        <div id="content-section">
-            <div id="what-is">
-                <h4>What is Neurodiversity?</h4>
-                <div class="content-text">
-                    <p>Lorem ipsum dolor sit amet,</p>
-                </div>
-            </div>
-            <div id="am-i">
-                <h4>Could I be neurodivergent?</h4>
-                <div class="content-text">
-                    <p>consectetur adipiscing elit,</p>
-                </div>
-            </div>
-            <div id="famous">
-                <h4>Famous neurodivergents</h4>
-                <div class="content-text">
-                    <p>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-            </div>
-        </div>
+        <footer>
+            <p>One day when I'm big, I'll be a footer</p>
+        </footer>
     </div>
-    <footer>
-        <p>One day when I'm big, I'll be a footer</p>
-    </footer>
+     
+    <!-- Login -->
+    <div class="form-popup" id="myForm">
+        <form action="/action_page.php" class="form-container">
+            <h1>Login</h1>
+
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" required>
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+            <p>Not already a member? Sign up!</p>
+            <button type="submit" class="btn">Login</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
+    </div>
 </body>
 <script src="/script.js"></script>
 
