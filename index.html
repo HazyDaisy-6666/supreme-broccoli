@@ -13,6 +13,7 @@
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Neurodivergents Unite</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 </head>
 
 <body>
@@ -20,21 +21,21 @@
         <header id="top-nav">
             <div id="top-nav-left">
                 <i id="nav-button" class="fa-solid fa-bars" onclick="toggleNav()"></i>
-                <a href="blank"><i class="fa-solid fa-house icon"></i></a>
+                <i class="fa-solid fa-house icon" onclick="home()"></i>
             </div>
             <div id="top-nav-center">
                 <h2>Neurodivergents Unite</h2>
             </div>
             <div id="top-nav-right">
-                <a class="icon" href="blank">About | </a>
-                <a class="icon" href="blank">Contact |</a>
+                <p class="icon" href="blank">About </p>
+                <p class="icon" href="blank">Contact </p>
                 <p class="icon" href="blank" onclick="toggleForm()">Log in</p>
             </div>
         </header>
-        <nav class="hide-nav" id="left_nav">
-            <a href="blank"><i class="fa-sharp fa-solid fa-brain-circuit icon"></i>Austism</a>
-            <a href="blank"><i class="fa-sharp fa-solid fa-brain-circuit icon"></i>ADHD</a>
-            <a href="blank"><i class="fa-sharp fa-solid fa-brain-circuit icon"></i>Anxiety</a>
+        <nav class="hide-content" id="left_nav">
+            <a href="blank"><i class="fa-sharp fa-solid fa-brain icon"></i> Austism</a>
+            <a href="blank"><i class="fa-sharp fa-solid fa-brain"></i> ADHD</a>
+            <a href="blank"><i class="fa-sharp fa-solid fa-brain"></i> Anxiety</a>
         </nav>
         <div id="body-content">
             <!--  <button onclick="testFunction()">Click me</button>  testing JS linking-->
@@ -102,18 +103,18 @@
     </div>
      
     <!-- Login -->
-    <div class="form-popup" id="myForm">
+    <div class="form-popup hide-content" id="loginForm">
         <form action="/action_page.php" class="form-container">
-            <h1>Login</h1>
+            <h2>Login</h2>
 
             <label for="email"><b>Email</b></label>
             <input type="text" placeholder="Enter Email" name="email" required>
 
             <label for="psw"><b>Password</b></label>
             <input type="password" placeholder="Enter Password" name="psw" required>
-            <p>Not already a member? Sign up!</p>
+            <p>Not already a member? <a class="pagelink" onclick="signUp()">Sign up!</a></p>
             <button type="submit" class="btn">Login</button>
-            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+            <button type="button" class="btn cancel" onclick="toggleForm()">Close</button>
         </form>
     </div>
 </body>

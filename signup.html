@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Sign up</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+</head>
+
+<body>
+    <div class="outer-grid">
+        <header id="top-nav">
+            <div id="top-nav-left">
+                <i id="nav-button" class="fa-solid fa-bars" onclick="toggleNav()"></i>
+                <i class="fa-solid fa-house icon" onclick="home()"></i>
+            </div>
+            <div id="top-nav-center">
+                <h2>Neurodivergents Unite</h2>
+            </div>
+            <div id="top-nav-right">
+                <p class="icon" href="blank">About | </p>
+                <p class="icon" href="blank">Contact |</p>
+                <p class="icon" href="blank" onclick="toggleForm()">Log in</p>
+            </div>
+        </header>
+        <nav class="hide-content" id="left_nav">
+            <a href="blank"><i class="fa-sharp fa-solid fa-brain icon"></i> Austism</a>
+            <a href="blank"><i class="fa-sharp fa-solid fa-brain"></i> ADHD</a>
+            <a href="blank"><i class="fa-sharp fa-solid fa-brain"></i> Anxiety</a>
+        </nav>
+        <div id="body-content">
+            <div class="form-box" id="signupForm">
+                <form action="/action_page.php" class="form-container">
+                    <h2>Sign Up</h2>
+                    <label for="username"><b>User Name</b></label>
+                    <input id="newUserName" type="text" placeholder="Enter User Name" name="username" required>
+        
+                    <label for="email"><b>Email</b></label>
+                    <input id="newUserEmail" type="text" placeholder="Enter Email" name="email" required>
+        
+                    <label for="psw"><b>Password</b></label>
+                    <input id="psw" type="password" placeholder="Enter Password" name="psw" required>
+                    
+                    <label for="pswcon"><b>Confirm Password</b></label>
+                    <input id="pswcon" type="password" placeholder="Re-enter Password" name="pswcon" required>
+
+                    <button type="submit" class="btn" onclick="createAccount()">Sign Up!</button>
+                    <button type="button" class="btn cancel" onclick="home()">Cancel</button>
+                </form>
+            </div>
+        </div>
+        <footer>
+            <p>One day when I'm big, I'll be a footer</p>
+        </footer>
+    </div>
+     
+    <!-- Login -->
+    <div class="form-popup hide-content" id="myForm">
+        <form action="/action_page.php" class="form-container">
+            <h2>Login</h2>
+
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" required>
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+            <p>Not already a member? <a>Sign up!</a></p>
+            <button type="submit" class="btn">Login</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
+    </div>
+</body>
+<script src="/script.js"></script>
+
+</html>
