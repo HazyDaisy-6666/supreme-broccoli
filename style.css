@@ -4,7 +4,7 @@ SHARED RULES
 =======================
 */
 
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -15,7 +15,8 @@ html {
     font-family: 'Open Sans', sans-serif;
 }
 
-h1, h2 {
+h1,
+h2 {
     font-family: 'Raleway', sans-serif;
 }
 
@@ -29,7 +30,7 @@ h1, h2 {
 
 #content-section {
     max-width: 90%;
-    
+
 }
 
 .content-text {
@@ -47,18 +48,18 @@ OUTER GRID
 
 .outer-grid {
     display: grid;
-    height: 100vh;    
+    height: 100vh;
     grid-template-rows: 70px 1fr;
-    grid-template-columns: 100px 1fr;
-    grid-template-areas: 
-    "alias-header alias-header"
-    "alias-bodycontent alias-bodycontent";
+    grid-template-columns: 150px 1fr;
+    grid-template-areas:
+        "alias-header alias-header"
+        "alias-bodycontent alias-bodycontent";
 }
 
 .outer-grid-expand {
-    grid-template-areas: 
-    "alias-header alias-header"
-    "alias-nav alias-bodycontent";
+    grid-template-areas:
+        "alias-header alias-header"
+        "alias-nav alias-bodycontent";
 }
 
 .hide-content {
@@ -71,7 +72,7 @@ header {
 }
 
 nav {
-    grid-area: alias-nav;    
+    grid-area: alias-nav;
 }
 
 footer {
@@ -92,12 +93,13 @@ header {
     justify-content: space-between;
     width: 100%;
     height: 70px;
-    padding: 0 20px;
-    grid-template-columns: 1fr 5fr 1fr;
+    grid-template-columns: 1fr 5fr 3fr;
     grid-template-rows: 70px;
-    }
+    grid-area:
+        "alias-lh alias-center alias-rh";
+}
 
-.fa-bars {    
+.fa-bars {
     color: #ffffff;
 }
 
@@ -108,21 +110,23 @@ header {
 }
 
 header h2 {
-    color:#c6c2d1;
+    color: #c6c2d1;
     text-align: center;
 }
 
-#top-nav-left #top-nav-right {
+#top-nav-right {
     padding: 5px;
+    display: flex;
+    flex-direction: column;
 }
 
 
 .icon {
-    
+
     color: #ffffff;
     text-decoration: none;
     padding: 2px;
-    margin-left: 0;
+    margin-left: 10px;
 }
 
 .icon:hover {
@@ -135,15 +139,13 @@ header h2 {
     padding: 0 3px 0 3px;
     grid-area: alias-center;
 }
-                                                  
+
 .top-nav-left {
     grid-area: alias-lh;
-    
 }
 
 .top-nav-right {
     grid-area: alias-rh;
-    display: inline;
 }
 
 /*
@@ -153,63 +155,66 @@ LOGIN POPUP
 */
 /* Item used to open the contact form - fixed at the bottom of the page */
 
-  
-  /* The popup form - hidden by default */
-  .form-popup {
+
+/* The popup form - hidden by default */
+.form-popup {
     /* display: none; */
     position: fixed;
     bottom: 0;
     right: 15px;
     border: 3px solid #f1f1f1;
     z-index: 9;
-  }
-  
-  /* Add styles to the form container */
-  .form-container {
+}
+
+/* Add styles to the form container */
+.form-container {
     max-width: 300px;
     padding: 10px;
     background-color: white;
-  }
-  
-  /* Full-width input fields */
-  .form-container input[type=text], .form-container input[type=password] {
+}
+
+/* Full-width input fields */
+.form-container input[type=text],
+.form-container input[type=password] {
     width: 100%;
     padding: 15px;
     margin: 5px 0 22px 0;
     border: none;
     background: #f1f1f1;
-  }
-  
-  /* When the inputs get focus, do something */
-  .form-container input[type=text]:focus, .form-container input[type=password]:focus {
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus,
+.form-container input[type=password]:focus {
     background-color: #ddd;
     outline: none;
-  }
-  
-  /* Set a style for the submit/login button */
-  .form-container .btn {
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
     background-color: #826FA3;
     color: white;
     padding: 16px 20px;
     border: none;
     cursor: pointer;
     width: 100%;
-    margin-bottom:10px;
+    margin-bottom: 10px;
     opacity: 0.8;
-  }
-  
-  /* Add a red background color to the cancel button */
-  .form-container .cancel {
-    background-color: #8343F0;
-  }
-  
-  /* Add some hover effects to buttons */
-  .form-container .btn:hover, .open-button:hover {
-    opacity: 1;
-  }
+}
 
-  .pagelink {
-    
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+    background-color: #8343F0;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover,
+.open-button:hover {
+    opacity: 1;
+}
+
+.pagelink {
+
     color: #8343F0;
     text-decoration: none;
     padding: 2px;
@@ -221,70 +226,73 @@ LOGIN POPUP
     cursor: pointer;
 }
 
- /*
+/*
 =======================
 SIGN UP BLOCK
 =======================
 */
 /* Item used to open the contact form - fixed at the bottom of the page */
 
-  
-  
-  .form-box {   
-    position: fixed; 
-     top: 50%;
-    left: 50%;  
-     transform: translate(-50%, -50%);
+
+
+.form-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     border: 3px solid #f1f1f1;
     z-index: 9;
-  }
-  
-  /* Add styles to the form container */
-  .form-container {
+}
+
+/* Add styles to the form container */
+.form-container {
     max-width: 300px;
     padding: 10px;
     background-color: white;
-  }
-  
-  /* Full-width input fields */
-  .form-container input[type=text], .form-container input[type=password] {
+}
+
+/* Full-width input fields */
+.form-container input[type=text],
+.form-container input[type=password] {
     width: 100%;
     padding: 15px;
     margin: 5px 0 22px 0;
     border: none;
     background: #f1f1f1;
-  }
-  
-  /* When the inputs get focus, do something */
-  .form-container input[type=text]:focus, .form-container input[type=password]:focus {
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus,
+.form-container input[type=password]:focus {
     background-color: #ddd;
     outline: none;
-  }
-  
-  /* Set a style for the submit/login button */
-  .form-container .btn {
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
     background-color: #826FA3;
     color: white;
     padding: 16px 20px;
     border: none;
     cursor: pointer;
     width: 100%;
-    margin-bottom:10px;
+    margin-bottom: 10px;
     opacity: 0.8;
-  }
-  
-  /* Add a red background color to the cancel button */
-  .form-container .cancel {
-    background-color: #8343F0;
-  }
-  
-  /* Add some hover effects to buttons */
-  .form-container .btn:hover, .open-button:hover {
-    opacity: 1;
-  }
+}
 
-  .pagelink {
-    
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+    background-color: #8343F0;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover,
+.open-button:hover {
+    opacity: 1;
+}
+
+.pagelink {
+
     color: #8343F0;
     text-decoration: none;
     padding: 2px;
@@ -303,24 +311,21 @@ LEFT NAV
 =======================
 */
 nav {
-    background-color: #826FA3;       
+    background-color: #826FA3;
     display: flex;
-    flex-direction: column;    
+    flex-direction: column;
 }
 
-nav a {
+nav p {
     color: #ffffff;
-    text-decoration: none;
     padding-left: 10px;
 }
 
-nav a:hover {
+nav p:hover {
     color: #ddd7d7;
     font-size: 0.9rem;
     cursor: pointer;
 }
-
-
 
 /*
 =======================
@@ -331,20 +336,21 @@ BODY
 
 #body-content {
     overflow-y: scroll;
-    display: grid;    
+    /* try auto ↑ */
+    display: grid;
     row-gap: 5px;
     padding: 15px;
     grid-area: alias-bodycontent;
-     justify-self: center;
-     justify-items: center;
+    justify-self: center;
+    justify-items: center;
     grid-template-rows: 1fr 5fr;
     grid-template-columns: 1fr;
-    grid-template-areas: 
-    "alias-banner"
-    "alias-body-text";
+    grid-template-areas:
+        "alias-banner"
+        "alias-body-text";
 }
 
-#banner-section {   
+#banner-section {
     grid-area: alias-banner;
 }
 
@@ -354,23 +360,23 @@ BODY
 
 #banner-section img {
     width: 90%;
-    height: auto;     
-    border-radius: 5px;        
-    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.27);
-    margin: 0 5% 10px 5%;    
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.27);
+    margin: 0 5% 10px 5%;
 }
 
 
 #content-section {
     grid-area: alias-body-text;
     border-radius: 5px;
-    display: grid;    
+    display: grid;
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: 1fr;
-    grid-template-areas: 
-    "alias-whatis"
-    "alias-ami"
-    "alias-famous";
+    grid-template-areas:
+        "alias-whatis"
+        "alias-ami"
+        "alias-famous";
 }
 
 .content-text {
@@ -387,7 +393,7 @@ BODY
     display: grid;
     padding: 10px;
     background-color: #b1afb4;
-    margin-bottom: 1.5%;    
+    margin-bottom: 1.5%;
 }
 
 
@@ -399,16 +405,16 @@ BODY
 }
 
 #am-i {
-    grid-area: alias-ami;  
+    grid-area: alias-ami;
 }
 
 #famous {
     overflow-y: scroll;
-    grid-area: alias-famous;       
+    grid-area: alias-famous;
 }
 
 .person {
-    display: flex;    
+    display: flex;
 }
 
 .person img {
@@ -418,7 +424,7 @@ BODY
     height: 40px;
     width: auto;
     grid-area: alias-personimg;
-    box-shadow: none;    
+    box-shadow: none;
     /* justify-self: center;     */
 
 }
@@ -426,7 +432,7 @@ BODY
 .person h4 {
     grid-area: alias-personh;
     /*justify-self: left; */
-    
+
 }
 
 
@@ -448,7 +454,7 @@ footer {
     border-top: solid #826FA3 2px;
     justify-content: center;
     align-items: center;
-    
+
 }
 
 /*
@@ -456,7 +462,7 @@ footer {
 BREAKPOINTS 
 =======================
 */
-@media (min-width: 576px) {   
+@media (min-width: 576px) {
     .outer-grid {
         grid-template-areas:
             "alias-header alias-header"
@@ -464,44 +470,56 @@ BREAKPOINTS
     }
 
     nav {
-      display: flex !important;
-      
+        display: flex !important;
+
     }
 
     #nav-button {
         display: none;
     }
+
+    #top-nav-right {
+        flex-direction: row;
+        margin-right: 0;
+    }
 }
 
 @media (min-width: 992px) {
-    
+
     #content-section {
         display: flex;
         justify-content: center;
     }
 
     #content-text {
-        border: 1px solid rgba(0, 0, 0, 2);      
+        border: 1px solid rgba(0, 0, 0, 2);
 
     }
 
-    #what-is, #am-i, #famous {        
+    #what-is,
+    #am-i,
+    #famous {
         width: 32%;
     }
-     
-    
-    #what-is-header,  #am-i-header, #famous-header {
+
+
+    #what-is-header,
+    #am-i-header,
+    #famous-header {
         height: 10%;
     }
-    
-    #what-is-text,  #am-i-text, #famous-text  {
-        
+
+    #what-is-text,
+    #am-i-text,
+    #famous-text {
+
         height: 85%;
     }
 
-       
-    
+
+
 }
+
 /* unnecessary for now, just messing up header
 
 @media (min-width: 1440px) {
