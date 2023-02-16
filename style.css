@@ -118,6 +118,8 @@ header h2 {
     padding: 5px;
     display: flex;
     flex-direction: column;
+    justify-content: end;
+    padding-right: 20px;
 }
 
 
@@ -125,7 +127,7 @@ header h2 {
 
     color: #ffffff;
     text-decoration: none;
-    padding: 2px;
+    /* padding: 2px; */
     margin-left: 10px;
 }
 
@@ -318,7 +320,6 @@ nav {
 
 nav p {
     color: #ffffff;
-    padding-left: 10px;
 }
 
 nav p:hover {
@@ -480,7 +481,7 @@ BREAKPOINTS
 
     #top-nav-right {
         flex-direction: row;
-        margin-right: 0;
+
     }
 }
 
