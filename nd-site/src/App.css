@@ -439,6 +439,10 @@ footer {
 BREAKPOINTS 
 =======================
 */
+
+
+/* -- CONSIDER CONTAINER QUERIES !!! */
+
 @media (min-width: 576px) {
   .outer-grid {
     grid-template-areas:
